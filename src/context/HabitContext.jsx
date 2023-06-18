@@ -1,21 +1,22 @@
 import { createContext } from "react";
 import { useReducer } from "react";
 import { habits } from "../db";
-import {habitReducer} from "../reducer/HabitReducer";
+import {HabitReducer} from "../reducer/HabitReducer";
 export const HabitContext = createContext();
 
-export const HabotProvider = ({children})=>{
+export const HabitProvider = ({children})=>{
 
     const initialState = {
         habits:habits,
 
     }
 
-    const [state, dispatch] = useReducer(habitReducer, initialState);
+    const [state, dispatch] = useReducer(HabitReducer, initialState);
 
     return(
         <HabitContext.Provider value={{
             habits: state.habits,
+            dataDispatch: dispatch,
         }}  >
             {children}
         </HabitContext.Provider>

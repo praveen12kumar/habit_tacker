@@ -24,6 +24,7 @@ export const habits = [
         time_of_day:"Any Time",
         goal:"1 times Daily",
         start_date: "Today",
-    }
+    },
+    
 
 ] 
