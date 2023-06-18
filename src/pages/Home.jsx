@@ -13,10 +13,10 @@ const Home = () => {
 
     const handleDelete = (id)=>{
         const newHabit = habits.filter((habit)=> habit.id !== id);
-        console.log("newHabit", newHabit);
+        console.log("newHabit1111", newHabit);
         dataDispatch({
             type: 'delete',
-            payload: id,
+            payload: newHabit,
         })
     }
 
@@ -30,10 +30,8 @@ const Home = () => {
                     </div>
                     {
                         habits.map((habit) =>(
-                            <div className="habit" key={habit.title} 
-                                onClick={()=> navigate(`/${habit.id}`)}
-                            >
-                                <h2>{habit.title}</h2>
+                            <div className="habit" key={habit.title}>
+                                <h2 onClick={()=> navigate(`/${habit.id}`)}>{habit.title}</h2>
                                 <div className="button-section">
                                     <button><AiOutlineEdit/></button>
                                     <button onClick={()=>handleDelete(habit.id)}  ><AiFillDelete/></button>

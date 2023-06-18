@@ -6,13 +6,14 @@ const HabitPage = () => {
     const {habits}= useContext(HabitContext);
     
     const navigate = useNavigate();
+    
     const {habitId} = useParams();
     
-    //console.log("habitId", typeof(habitId), habitId);
+    console.log("habitId 222", typeof(habitId), habitId);
 
-    const newHabit = habits.find((item)=> item.id === habitId);
+    const newHabit = habits?.find((item)=> item.id === habitId);
 
-    // console.log("newHabit",newHabit);
+    console.log("newHabit 333",newHabit);
     
     const {id, title, repeat, time_of_day, goal, start_data} = newHabit;
     
